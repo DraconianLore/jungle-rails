@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thank you, <%= @user.name %></h1>
+    <p>
+     Your order is on its way.<br><br>
+     <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @order.line_items.each do |item| %>
+          <%= render 'item', product: Product.find(item[:product_id]), quantity: item[:quantity].to_i %>
+        <% end %>
+      </tbody>
+    
+    </table>
+
+    </p>
+    <strong>Order Total:  <%= @order.total_cents / 100.0 %> </strong>
+    <p>Thanks for ordering from Jungle, have a great day!</p>
+  </body>
+</html>
