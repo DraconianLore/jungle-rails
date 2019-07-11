@@ -3,7 +3,10 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
+  <% if flash[:notice] %>
+    <div class="alert alert-info"><h2><%= flash[:notice] %></h2></div>
+    <div> <h3><%= link_to 'Back to the Jungle', :root %></h3></div>
+  <% else %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -31,7 +34,6 @@
       </tfoot>
     </table>
   </div>
-
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -48,5 +50,6 @@
       <% end %>
     </div>
   </div>
+  <% end %>
 
 </section>
