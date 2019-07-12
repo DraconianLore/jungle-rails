@@ -1,5 +1,6 @@
 <dd><div class='review'>
-  <% if review.user.name == current_user.name %>
+<% if current_user && review.user.name == current_user.name%>
+
   <span class='rev-tit own-rev'><em>
   Your Review 
   <%= link_to fa_icon('trash'), product_review_url(params[:id], review), class: 'label-danger label', method: :delete %>

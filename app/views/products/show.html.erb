@@ -38,6 +38,13 @@ Rating:
           <br>
           <dt>Reviews</dt>
           <% if @product.reviews[0] %>
+          <dd><h4 class="rating-top">Overall Rating: 
+  <% (@product.reviews.average(:rating).to_i).times { %>
+  <span class="fa fa-star checked"></span> 
+  <% } %>
+  <% (5 - @product.reviews.average(:rating).to_i).times { %>
+  <span class="fa fa-star"></span> 
+  <% } %> </span></h4>
           <% @product.reviews.reverse_each do |review| %>
             <%= render 'review', review: review, product: @product %>
           <% end %>

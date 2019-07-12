@@ -1,11 +1,10 @@
 class ReviewsController < ApplicationController
     before_filter :authorize
     def create
-        @review = Review.new
+        @review = Review.new(alloewd_params)
+
         @review.user = current_user
         @review.product = Product.find(params[:product_id])
-        @review.rating = params[:rating]
-        @review.description = params[:description]
         if @review.valid?
             @review.save
         end
@@ -19,5 +18,10 @@ class ReviewsController < ApplicationController
         @review.destroy
         redirect_to product_url(params[:product_id]) , notice: 'Review deleted!'
       end
-  end
+
+      private
+        def alloewd_params
+            params.require(:review).permit(:rating, :description)
+         end
+end
   

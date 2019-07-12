@@ -96,6 +96,8 @@ main section.products-show {
   margin-top: 1em;
   border: 2px solid;
   padding-bottom: 0.8em;
+  border-radius: 10px;
+  margin-bottom: 2em;
 
   select {
     background-color: khaki;
@@ -122,7 +124,10 @@ main section.products-show {
   p {
     padding: 0.5em 0 0 20px;
   }
-  .checked {
-    color: orange;
-  }
 }
+    .checked {
+      color: orange;
+    }
+    .rating-top {
+      margin-top: 0;
+    }
