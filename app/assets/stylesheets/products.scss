@@ -86,3 +86,14 @@ main section.products-show {
 }
 
 
+.review-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  text-align: center;
+  align-items: center;
+
+  select {
+    width: 70px;
+  }
+}

@@ -32,5 +32,22 @@
     </div>
 
   </article>
+  <% if current_user %>
+<%= form_for [@product, @review] do |f| %>
+<div class="review-form">
+<h3>Leave a review:</h3>
+<input type="text" name="description">
+<br>
+Rating: <select class="form-control" name='rating'>
+  <option>5</option>
+  <option>4</option>
+  <option>3</option>
+  <option>2</option>
+  <option>1</option>
+</select><br>
+<%= submit_tag "Submit" %>
+</div>
+<% end %>
+<% end %>
 
 </section>
