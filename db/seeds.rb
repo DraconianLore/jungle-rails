@@ -131,6 +131,45 @@ cat3.products.create!({
   quantity: 23,
   price: 2_483.75
 })
+## USERS
 
+User.create!({
+  name: 'Anonymous',
+  password: 'anon'
+})
+
+## REVIEWS
+
+puts "Re-creating Reviews ..."
+Review.create!({
+  description: 'Noooooooooo, turns out none of my friends think this is classy :-(',
+  rating: 1,
+  user: User.first,
+  product: Product.first
+})
+Review.create!({
+  description: 'AAAAAAaaaaaahhhhhhhhh!!!!!!!! Never slept better!',
+  rating: 5,
+  user: User.first,
+  product: Product.find(10)
+})
+Review.create!({
+  description: 'Woke up on the floor!',
+  rating: 2,
+  user: User.first,
+  product: Product.find(10)
+})
+Review.create!({
+  description: 'Theres no phone... why is there no phone?????',
+  rating: 2,
+  user: User.first,
+  product: Product.find(5)
+})
+Review.create!({
+  description: 'Now the wife doesnt complain about me wearing my shoes to bed!!!',
+  rating: 4,
+  user: User.first,
+  product: Product.find(4)
+})
 
 puts "DONE!"

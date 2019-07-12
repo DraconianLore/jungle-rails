@@ -1,8 +1,6 @@
 class CartsController < ApplicationController
   before_filter :authorize
   def show
-    puts '################################'
-    puts !cart[0]
     if !cart[0]
       flash.now[:notice] = "Cart is empty"
     end
