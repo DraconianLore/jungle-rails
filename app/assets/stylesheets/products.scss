@@ -92,8 +92,37 @@ main section.products-show {
   max-width: 250px;
   text-align: center;
   align-items: center;
+  margin: auto;
+  margin-top: 1em;
+  border: 2px solid;
+  padding-bottom: 0.8em;
 
   select {
-    width: 70px;
+    background-color: khaki;
+    margin: 10px 0 10px 0;
+  }
+}
+.review {
+  border-width: 2px;
+  border-style: inset;
+  border-radius: 4px;
+  padding: 0.5em 1em 0 1em;
+  margin-bottom: 1em;
+
+  .frsp {
+    float: right;
+  }
+  .own-rev {
+    color: mediumblue;
+  }
+  .rev-tit {
+    font-weight: 600;
+    
+  }
+  p {
+    padding: 0.5em 0 0 20px;
+  }
+  .checked {
+    color: orange;
   }
 }

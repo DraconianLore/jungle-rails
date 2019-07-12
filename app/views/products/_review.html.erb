@@ -1,5 +1,21 @@
-<dd>
-  <em><%= review.user.name %></em>
-  <p><%= review.description %> <br>
-  User Rating: <%= review.rating.to_s %></p>
+<dd><div class='review'>
+  <% if review.user.name == current_user.name %>
+  <span class='rev-tit own-rev'><em>
+  Your Review 
+  <%= link_to fa_icon('trash'), product_review_url(params[:id], review), class: 'label-danger label', method: :delete %>
+  </em></span>
+  <% else %>
+  <span class='rev-tit'><em>
+  <%= review.user.name %>
+  </em></span>
+  <% end %>
+  <span class='frsp'>User Rating: 
+  <% review.rating.times { %>
+  <span class="fa fa-star checked"></span> 
+  <% } %>
+  <% (5 - review.rating).times { %>
+  <span class="fa fa-star"></span> 
+  <% } %> </span>
+  <p><%= review.description %> </p>
+  </div>
   </dd>

@@ -10,6 +10,19 @@
 
       <div class="col-sm-4">
         <%= image_tag @product.image.url, class: 'main-img' %>
+        <br>
+          <% if current_user %>
+<div class="review-form">
+<h3>Leave a review:</h3>
+<%= form_for [@product, @review] do |f| %>
+<%= f.text_field :description, class: 'form-control'  %>
+Rating: 
+<%= f.select :rating, options_for_select(1..5), class: 'form-control' %>
+<br>
+<%= submit_tag "Submit", class: 'btn btn-primary btn-sm' %>
+</div>
+<% end %>
+<% end %>
       </div>
 
       <div class="col-sm-8">
@@ -24,30 +37,19 @@
           <dd><%= @product.price %></dd>
           <br>
           <dt>Reviews</dt>
-          <% @product.reviews.each do |review| %>
-            <%= render 'review', review: review %>
+          <% if @product.reviews[0] %>
+          <% @product.reviews.reverse_each do |review| %>
+            <%= render 'review', review: review, product: @product %>
           <% end %>
+          <% else %>
+          <dd>This product has yet to be reviewed.</dd>
+          <% end %>
+          
         </dl>
       </div>
     </div>
 
   </article>
-  <% if current_user %>
-<%= form_for [@product, @review] do |f| %>
-<div class="review-form">
-<h3>Leave a review:</h3>
-<input type="text" name="description">
-<br>
-Rating: <select class="form-control" name='rating'>
-  <option>5</option>
-  <option>4</option>
-  <option>3</option>
-  <option>2</option>
-  <option>1</option>
-</select><br>
-<%= submit_tag "Submit" %>
-</div>
-<% end %>
-<% end %>
+
 
 </section>
