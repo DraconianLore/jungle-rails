@@ -28,5 +28,5 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Screenshot
 
-![Jungle on rails screenshot](./public/jungle-screenshot.jpg)
+![Jungle on rails screenshot](./public/jungle-screenshot.png)
 
