@@ -1,24 +1,25 @@
 main section.products-index,
 main section.categories-show {
+  color: antiquewhite;
 
   .products {
-    display:         flex;
-    flex-direction:  row;
-    flex-wrap:       wrap;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
 
     .product {
       // flex:      1;
       max-width: 260px;
       // so that footer within can be positioned absolutely
-      position:  relative;
+      position: relative;
 
-      border:        1px solid #ccc;
+      border: 1px solid rgba(0, 230, 64, 0.1);
       border-radius: 5px;
-      padding:       15px;
+      padding: 15px;
       padding-bottom: 80px;
-      margin-top:    20px;
-      // margin:        10px;
+      margin-top: 20px;
+      background-color: rgba(30, 130, 76, 0.8);
 
       header img {
         max-width: 100%;
@@ -30,13 +31,13 @@ main section.categories-show {
       footer {
         position: absolute;
         bottom: 0;
-        left:   0;
-        background-color: #EEE;
+        left: 0;
+        background-color: rgba(0, 230, 64, 1);
         padding: 15px;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         width: 100%;
-        opacity: 0.3;
+        opacity: 0.5;
         transition: all 0.3s;
       }
 
@@ -45,46 +46,48 @@ main section.categories-show {
         top: 0;
         right: 0;
         padding: 10px;
-        background-color: #eee;
+        background-color: rgba(38, 166, 91, 1);
         border-top-right-radius: 4px;
         border-bottom-left-radius: 20px;
         font-size: 0.8em;
+        color: #ffffff;
       }
       aside.sold-out {
         position: absolute;
         top: 0;
         left: 0;
         padding: 10px;
-        background-color: salmon;
+        background-color: rgba(38, 166, 91, 1);
         border-top-left-radius: 4px;
         border-bottom-right-radius: 20px;
         font-size: 0.8em;
         font-weight: 700;
-        color: #EEE;
+        color: rgba(207, 0, 15, 1);
       }
 
       &:hover {
-
-        border-color: #999;
+        border-color: rgba(0, 230, 64, 1);
 
         footer {
-          opacity: 1.0;
+          opacity: 1;
         }
       }
-
     }
   }
 }
 
 main section.products-show {
-
+  background-color: rgba(30, 130, 76, 0.8);
+  padding: 1em;
+  border-radius: 20px;
   .product-detail {
+    color: antiquewhite;
+
     img.main-img {
       max-width: 100%;
     }
   }
 }
-
 
 .review-form {
   display: flex;
@@ -101,6 +104,7 @@ main section.products-show {
 
   select {
     background-color: khaki;
+    color: black;
     margin: 10px 0 10px 0;
   }
 }
@@ -108,26 +112,27 @@ main section.products-show {
   border-width: 2px;
   border-style: inset;
   border-radius: 4px;
+  border-color: orange;
   padding: 0.5em 1em 0 1em;
   margin-bottom: 1em;
+  background-color: rgba(7, 131, 33, 0.8);
 
   .frsp {
     float: right;
   }
   .own-rev {
-    color: mediumblue;
+    color: lightgreen;
   }
   .rev-tit {
     font-weight: 600;
-    
   }
   p {
     padding: 0.5em 0 0 20px;
   }
 }
-    .checked {
-      color: orange;
-    }
-    .rating-top {
-      margin-top: 0;
-    }
+.checked {
+  color: orange;
+}
+.rating-top {
+  margin-top: 0;
+}

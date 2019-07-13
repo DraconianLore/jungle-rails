@@ -9,9 +9,34 @@
 // Global
 body {
   padding-top: 70px;
+  background-image: url("/jungleBG.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 // Bootstrap adjustments
 form.button_to {
   display: inline;
+}
+
+.page-header {
+  border-color: rgb(41, 184, 41);
+  color: lawngreen;
+}
+a {
+  color: burlywood;
+}
+
+.navbar-fixed-top {
+
+  background-color: rgba(144, 198, 149, 1);
+}
+.user-forms {
+  background-color: rgba(30, 130, 76, 0.8);
+  color: antiquewhite;
+  padding: 1em;
+
+  input {
+    color: green;
+  }
 }

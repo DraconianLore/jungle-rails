@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
     before_filter :authorize
     def create
-        @review = Review.new(alloewd_params)
+        @review = Review.new(allowed_params)
 
         @review.user = current_user
         @review.product = Product.find(params[:product_id])
@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
       end
 
       private
-        def alloewd_params
+        def allowed_params
             params.require(:review).permit(:rating, :description)
          end
 end

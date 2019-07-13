@@ -37,7 +37,7 @@ Rating:
           <dd><%= @product.price %></dd>
           <br>
           <dt>Reviews</dt>
-          <% if @product.reviews[0] %>
+          <% if @product.reviews.length > 0 %>
           <dd><h4 class="rating-top">Overall Rating: 
   <% (@product.reviews.average(:rating).to_i).times { %>
   <span class="fa fa-star checked"></span> 
