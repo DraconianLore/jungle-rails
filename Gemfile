@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# testing
+gem "rspec"
+
 gem 'puma'
 
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -44,6 +47,7 @@ group :development, :test do
   gem 'byebug'
   gem 'quiet_assets'
   gem 'dotenv-rails'
+  gem 'rspec-rails'
 end
 
 group :development do
