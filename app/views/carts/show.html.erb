@@ -6,7 +6,10 @@
   <% if flash[:notice] %>
     <div class="alert alert-info"><h2><%= flash[:notice] %></h2></div>
     <div> <h3><%= link_to 'Back to the Jungle', :root %></h3></div>
-  <% else %>
+  <% else %> 
+  <% if flash[:error] %>
+  <div class="alert alert-danger"><h2><%= flash[:error] %></h2></div>
+  <% end %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -34,10 +37,11 @@
       </tfoot>
     </table>
   </div>
+  <% if !flash[:error] %>
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
-        <script
+      <script
           src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-amount="<%= cart_subtotal_cents %>"
@@ -47,6 +51,7 @@
           data-email="kvirani@gmail.com"
           data-currency="cad">
         </script>
+      <% end %>
       <% end %>
     </div>
   </div>

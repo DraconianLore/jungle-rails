@@ -148,10 +148,6 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rmagick (2.15.4)
-    rspec (3.8.0)
-      rspec-core (~> 3.8.0)
-      rspec-expectations (~> 3.8.0)
-      rspec-mocks (~> 3.8.0)
     rspec-core (3.8.2)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.4)
@@ -229,8 +225,7 @@ DEPENDENCIES
   rails (= 4.2.6)
   rails_12factor
   rmagick
-  rspec
-  rspec-rails
+  rspec-rails (~> 3.8)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

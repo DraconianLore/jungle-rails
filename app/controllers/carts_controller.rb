@@ -4,6 +4,13 @@ class CartsController < ApplicationController
     if cart.length < 1
       flash.now[:notice] = "Cart is empty"
     end
+    
+    enhanced_cart.each do |item|
+      product = item[:product]
+      if product.quantity - item[:quantity] < 0
+        flash.now[:error] = "There are only #{product.quantity} left of #{product.name}, you can not purchase #{item[:quantity]} of them."
+      end
+    end
   end
 
   def add_item
