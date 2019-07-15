@@ -9,7 +9,8 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/'
     else
-      redirect_to '/signup'
+      flash.now[:error] = "Passwords dont match, are too short, or email already exists"
+      render :new
     end
   end
 

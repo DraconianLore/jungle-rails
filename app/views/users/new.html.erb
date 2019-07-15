@@ -10,6 +10,9 @@
   <br><%= f.submit "Submit" %>
 
 <% end %>
-
+<br>
+<% if flash[:error] %>
+<div class="alert alert-danger"><h2><%= flash[:error] %></h2></div>
+<% end %>
 
 </div>
