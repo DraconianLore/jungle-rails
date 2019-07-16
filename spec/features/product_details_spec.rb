@@ -17,7 +17,7 @@ RSpec.feature "Visitor navigates to product page", type: :feature, js: true do
       end
     end
 
-  scenario "They see all products" do
+  scenario "They see a particular product" do
     # ACT
     visit root_path
     first('article a h4').click
