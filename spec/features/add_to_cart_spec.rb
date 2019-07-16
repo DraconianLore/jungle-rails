@@ -39,7 +39,7 @@ visit '/login'
 
     # DEBUG / VERIFY
     expect(page).to have_text 'My Cart (1)'
-    save_screenshot
+    save_screenshot 'addToCart.png'
 
   end
 

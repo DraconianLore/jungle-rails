@@ -24,7 +24,7 @@ RSpec.feature "Visitor navigates to product page", type: :feature, js: true do
 
     # DEBUG / VERIFY
     expect(page).to have_text 'Quantity'
-    save_screenshot
+    save_screenshot 'productDetails.png'
 
   end
 
