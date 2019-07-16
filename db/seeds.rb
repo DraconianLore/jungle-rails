@@ -135,7 +135,8 @@ cat3.products.create!({
 
 User.create!({
   name: 'Anonymous',
-  password: 'anon'
+  password: 'anon',
+  email: 'temp@anon.anon'
 })
 
 ## REVIEWS
