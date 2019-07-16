@@ -16,7 +16,7 @@ end
 # Only run on development (local) instances not on production, etc.
 unless Rails.env.development?
   puts "Development seeds only (for now)!"
-  exit 0
+  # exit 0
 end
 
 # Let's do this ...
